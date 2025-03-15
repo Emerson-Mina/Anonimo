@@ -1,4 +1,4 @@
-const socket = io("");
+const socket = io(":3000"); //!Puede usar localhost o usar la ip ortorgada por su ONU "Router" en ifconfig
 let usuarioNombre = null;
 
 socket.on("asignarNombre", (nombre) => {
@@ -44,7 +44,7 @@ function mostrarNotificacion(usuario, mensaje) {
     if (Notification.permission === "granted") {
         new Notification("Nuevo mensaje", {
             body: `${usuario}: ${mensaje}`,
-            icon: "https://cdn-icons-png.flaticon.com/512/295/295128.png"
+            icon: "https://thumbs.dreamstime.com/b/icono-desconocido-de-las-personas-del-grupo-pictograma-an%C3%B3nimo-aislado-en-el-fondo-blanco-ejemplo-la-muestra-vector-146954424.jpg"//?Esto es una imagen que use como icono para la notificaicon en el navegador
         });
     }
 }

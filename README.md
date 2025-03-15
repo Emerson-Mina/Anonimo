@@ -13,8 +13,8 @@ Este es un chat en tiempo real basado en HTML, CSS, JavaScript y Socket.io. Perm
 
 ## Instalación y Configuración
 
-### Requisitos
-- Tener Python instalado.
+### Requisitos no tan "Necesarios"
+- Tener Python instalado esto para exponer a través de la red.
 - Tener acceso a una red local para pruebas con múltiples dispositivos.
 
 ### Pasos para Configurar el Proyecto
@@ -37,7 +37,7 @@ python3 -m http.server 8000 --bind 0.0.0.0
 Accede en tu navegador:
 
 ```
-http://192.168.1.13:8000
+http://ip:8000
 ```
 
 ## Exponer el Chat a Otros Dispositivos
@@ -50,18 +50,20 @@ Ejecuta este comando para obtener tu IP:
 ip a | grep inet
 ```
 
-Busca una dirección tipo **192.168.x.x** o **10.x.x.x**.
+Busca una dirección tipo **192.168.x.x** .
 
 ### Abre el Firewall para Permitir Conexiones (Si es Necesario)
 
 ```sh
 sudo ufw allow 8000
+sudo ufw allow 3000
 ```
 
 Para quitar las reglas después:
 
 ```sh
 sudo ufw delete allow 8000
+sudo ufw delete allow 3000
 ```
 
 ### Accede desde Otro Dispositivo
@@ -76,4 +78,4 @@ Esto cargará el chat en tiempo real.
 
 ## Listo para Usar
 
-Tu chat está funcionando en la red local. Puedes conectarte desde cualquier dispositivo en la misma red. Si necesitas exponerlo en internet, usa `ngrok`.
+Tu chat está funcionando en la red local. Puedes conectarte desde cualquier dispositivo en la misma red. Si necesitas exponerlo en internet, usa [`ngrok`](https://ngrok.com/).
